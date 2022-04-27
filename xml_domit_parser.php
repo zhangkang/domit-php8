@@ -3392,10 +3392,12 @@ class DOMIT_Parser {
 		$this->lastChild->appendChild($currentNode);
 
 		reset ($attrs);
-			
-		while (list($key, $value) = each ($attrs)) {
+		foreach ($attrs as $key => $value) {
 			$currentNode->setAttribute($key, $value);
-		}
+		}	
+		/*while (list($key, $value) = each ($attrs)) {
+			$currentNode->setAttribute($key, $value);
+		}*/
 		
 		$this->lastChild =& $currentNode;
 	} //startElement	
